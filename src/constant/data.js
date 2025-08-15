@@ -81,7 +81,7 @@ export const ProjectsItems = [
     title: "Portfolio Website",
     src: "/images/portfolio.png",
     text: "My personal portfolio built with React and Tailwind CSS. This fully responsive site features dynamic navigation via Intersection Observer API and a secure contact form powered by EmailJS. The UX is enhanced with fluid animations from Framer Motion and GSAP.",
-    deployLink: "https://akshatjain.vercel.app", // Add your deployed link
+    deployLink: "https://akshatjainn.vercel.app", // Add your deployed link
     githubLink: "https://github.com/fiercfly/portfolio-website",
   },
   {
