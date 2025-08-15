@@ -47,7 +47,7 @@ const Hero = () => {
 
                         <motion.div variants={fadeInUp} className='mt-10 flex items-center justify-center flex-wrap gap-5'>
                         
-                           <a href="/Akshat_Jain_Resume.pdf" download>
+                           <a href="public\Resume\Akshat_Jain_Resume.pdf" download>
                              <Button label='Download Resume' classes="primary-btn" icon />
                            </a>
                            <a href="#contact">
