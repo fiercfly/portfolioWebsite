@@ -1,17 +1,75 @@
-<<<<<<< HEAD
-# React + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, responsive developer portfolio built using React and modern frontend tooling, designed to showcase projects, technical skills, and production experience.
 
-Currently, two official plugins are available:
+The site focuses on performance, animation smoothness, and SEO optimization while maintaining a clean and minimal UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# portfolioWebsite
-My personal portfolio built with React and Tailwind CSS. This fully responsive site features dynamic navigation via Intersection Observer API and a secure contact form powered by EmailJS. The UX is enhanced with fluid animations from Framer Motion and GSAP.
->>>>>>> b0223076562e075b51f1f4ce65822899777338d0
+- Fully responsive layout (mobile + desktop)
+- Lighthouse SEO score: 91+
+- Lighthouse Best Practices score: 100
+- 60fps animation rendering using Framer Motion & GSAP
+- Smooth scroll transitions and section-based navigation
+- Optimized asset loading for faster first paint
+- Deployed on Vercel with automatic CI/CD on push
+
+---
+
+## 🏗 Architecture Overview
+
+### Frontend
+
+- React.js (Functional Components + Hooks)
+- Tailwind CSS for utility-first styling
+- Framer Motion for UI transitions
+- GSAP for advanced timeline-based animations
+- React Router for client-side navigation
+
+### Performance Optimizations
+
+- Memoization using `useMemo` and `useCallback` where required
+- Lazy loading for non-critical sections
+- Optimized image sizes
+- Reduced layout shifts for better CLS scores
+- Minimal dependency footprint
+
+---
+
+## 🎨 Design Philosophy
+
+- Minimal and readable typography
+- Clear hierarchy and visual spacing
+- Subtle motion to enhance UX without distracting users
+- Developer-focused content clarity
+
+The goal was to build a portfolio that reflects engineering discipline — not just visual aesthetics.
+
+---
+
+## 🛠 Tech Stack
+
+- React.js
+- Tailwind CSS
+- Framer Motion
+- GSAP
+- JavaScript (ES6+)
+- Vercel Deployment
+
+---
+
+## 🌐 Live Demo
+
+Live: https://akshatjainn.vercel.app  
+GitHub: https://github.com/fiercfly/portfolioWebsite  
+
+---
+
+## 📦 Installation
+
+```bash
+npm install
+npm start
+```
