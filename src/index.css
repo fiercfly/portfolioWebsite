@@ -1,64 +1,378 @@
-/* Google font */
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-primary-clr: #58e0bb;
-  --color-secondary-clr: #121b21;
-  --color-bgClr: #0e1419;
+  --color-primary: #86C195; /* Brighter Mint Green */
+  --color-primary-light: #ACE1BB;
+  --color-secondary: #F4C2C2; /* Blossom Pink */
+  --color-secondary-light: #FFDada;
+  --color-accent: #FFD700; /* Sunlight Gold */
+  --color-bg: #0A0F0B; /* Deep Forest Black */
+  --color-surface: #141D16; /* Earthy Dark Green */
+  --color-surface-light: #1E2D20;
+  --color-border: rgba(134, 193, 149, 0.15);
+  --color-text: #E8F5E9;
+  --color-text-dim: rgba(232, 245, 233, 0.55);
+  
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
 
-  /* Typographey */
-  --font-dmSans: "DM Sans", sans-serif;
+  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  --glass-bg: rgba(10, 15, 11, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.05); /* Barely-there white border */
+  --glow-primary: 0 0 30px rgba(134, 193, 149, 0.2);
+  --color-secondary-vibrant: #FFB7B7;
 }
 
-html {
-  @apply scroll-smooth;
+:root {
+  color-scheme: dark;
 }
 
-body {
-  @apply bg-bgClr text-white font-dmSans;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-@layer utilities {
-  .container {
-    @apply px-4 mx-auto  md:px-8 lg:px-12 2xl:max-w-screen-xl;
+html, body {
+  background-color: var(--color-bg);
+  color: #E8F5E9;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D4F31;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Premium Glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-premium);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-hover:hover {
+  background: rgba(20, 30, 22, 0.75);
+  border-color: rgba(134, 193, 149, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 
+              0 0 30px rgba(134, 193, 149, 0.1);
+}
+
+.text-reveal {
+  background: linear-gradient(to right, #fff 0%, #fff 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.8s ease;
+}
+
+.text-reveal:hover {
+  background-position: 0 0;
+}
+
+/* Nature Animations */
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+.animate-sway {
+  animation: sway 6s ease-in-out infinite;
+}
+
+@keyframes flutter {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(5deg); }
+  75% { transform: translateY(5px) rotate(-5deg); }
+}
+
+.animate-flutter {
+  animation: flutter 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes float-petal {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.petal {
+  position: absolute;
+  pointer-events: none;
+  animation: float-petal 15s linear infinite;
+}
+
+@keyframes firefly {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0; }
+  25% { transform: translate(100px, -50px) scale(1.2); opacity: 0.8; }
+  50% { transform: translate(50px, -150px) scale(0.8); opacity: 0.4; }
+  75% { transform: translate(-100px, -100px) scale(1.1); opacity: 0.8; }
+}
+
+.firefly {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 10px var(--color-accent);
+  pointer-events: none;
+  animation: firefly 20s infinite ease-in-out;
+}
+
+/* Custom Weather Particles & Flapping Wings */
+@keyframes particle-fall {
+  0% {
+    transform: translateY(-5vh) translateX(0) rotate(0deg);
+    opacity: 0;
   }
-  p {
-    @apply text-sm sm:text-base md:text-lg text-neutral-400;
+  10% {
+    opacity: var(--opacity, 0.4);
   }
-  .section {
-    @apply py-28 lg:py-36;
+  90% {
+    opacity: var(--opacity, 0.4);
   }
-  h2 {
-    @apply text-2xl  lg:text-4xl font-semibold;
-  }
-  .input {
-    @apply h-12 w-full border border-neutral-800 indent-4 py-2;
-  }
-  button {
-    @apply cursor-pointer;
+  100% {
+    transform: translateY(105vh) translateX(100px) rotate(360deg);
+    opacity: 0;
   }
 }
 
-@layer components {
-  .primary-btn {
-    @apply bg-white px-8 py-3 text-black font-semibold tracking-wider border border-white hover:bg-transparent transition-colors hover:text-white active:bg-white/10;
+.particle {
+  position: fixed;
+  top: -5vh;
+  pointer-events: none;
+  z-index: 1;
+  animation: particle-fall var(--duration, 20s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes flap {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.25); }
+}
+
+.butterfly-wing {
+  animation: flap 0.15s ease-in-out infinite;
+}
+
+/* Typography Refinement — headings use serif, but NO global sizing */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #7A9E7E, #F4C2C2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding-right: 0.1em;
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ── Premium Chronological Timeline (The Garden Path) ── */
+.timeline-container {
+  position: relative;
+  width: 100%;
+  max-width: 72rem; /* Expanded to max-w-6xl for wider, more spacious view */
+  margin: 0 auto;
+}
+
+/* The vertical garden path line */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--color-border) 5%, var(--color-border) 95%, transparent);
+  z-index: 0;
+}
+
+@media (max-width: 767.98px) {
+  .timeline-line {
+    left: 1.5rem; /* Left align on mobile */
   }
-  .secondary-btn {
-    @apply px-8 py-3 text-white font-semibold tracking-wider border border-white transition-colors hover:text-black hover:bg-white active:bg-white/70;
+}
+@media (min-width: 768px) {
+  .timeline-line {
+    left: 50%; /* Center align on desktop */
+    transform: translateX(-50%);
   }
 }
 
-/* Header */
-.header {
-  @apply w-full fixed top-0 left-0 py-5 z-30 transition-colors;
+/* Individual timeline row container */
+.timeline-row {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-bottom: 4rem; /* Spacing on mobile */
+}
+.timeline-row:last-child {
+  margin-bottom: 0;
 }
 
-.header.active {
-  @apply bg-secondary-clr shadow-xs shadow-white/15;
+@media (max-width: 767.98px) {
+  .timeline-row {
+    flex-direction: column;
+    padding-left: 3.5rem; /* Clear the left vertical line */
+  }
+}
+@media (min-width: 768px) {
+  .timeline-row {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8rem; /* Expanded gaps for very spacious, high-end desktop layout */
+  }
+  .timeline-row.odd {
+    flex-direction: row; /* Card on left, empty space on right */
+  }
+  .timeline-row.even {
+    flex-direction: row-reverse; /* Card on right, empty space on left */
+  }
 }
 
-/* Header */
-.header {
-  @apply fixed top-0 left-0 py-5 w-full z-30;
+/* Timeline card wrap */
+.timeline-card-wrap {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .timeline-card-wrap {
+    width: 44%; /* Leaves a gap in the center */
+  }
+}
+
+/* The node that sits on the path line */
+.timeline-node {
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--color-primary), 0 0 30px rgba(122, 158, 126, 0.4);
+  border: 3.5px solid var(--color-bg);
+  z-index: 20;
+  transition: all 0.5s ease;
+}
+
+.timeline-node::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(122, 158, 126, 0.3);
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.7); opacity: 1; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+
+@media (max-width: 767.98px) {
+  .timeline-node {
+    left: 1.5rem;
+    top: 2.25rem; /* Align to the top portion of the card */
+    transform: translate(-50%, -50%);
+  }
+}
+@media (min-width: 768px) {
+  .timeline-node {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ── Typography & Spacing Tokens ── */
+.section-title {
+  @apply text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-[0.95] text-white uppercase text-center;
+}
+
+.section-subtitle {
+  @apply text-primary/70 font-bold text-[11px] lg:text-xs uppercase tracking-[0.3em] mb-6 text-center;
+}
+
+.btn-premium {
+  @apply relative px-6 py-3.5 md:px-8 md:py-4 font-bold rounded-full overflow-hidden transition-all duration-500 hover:scale-105 active:scale-95 flex items-center justify-center gap-2 md:gap-3 shadow-xl tracking-[0.15em] text-xs md:text-sm;
+}
+
+/* Project Card */
+.project-card-title {
+  @apply text-lg md:text-xl lg:text-2xl font-bold tracking-tight mb-3 md:mb-4 transition-colors duration-500 text-center;
+}
+
+.project-card-desc {
+  @apply text-text-dim text-xs md:text-sm leading-relaxed font-sans font-light text-center max-w-md mx-auto;
+}
+
+/* Labels */
+.garden-label {
+  @apply text-[11px] font-bold text-white/40 uppercase tracking-[0.3em] mb-2 block;
+}
+
+/* Scroll Animations */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Global Layout ── */
+.container {
+  @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12;
+}
+
+section {
+  @apply scroll-mt-24 w-full py-16 md:py-28 lg:py-32;
 }

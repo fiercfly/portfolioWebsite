@@ -1,20 +1,20 @@
-Alex 
-Hi,I'm Alex Chen.
+Akshat Jain
+Software Development Engineer (Full Stack / Backend)
 
-Senior Frontend Developer
-
-I'm Alex Chen, a frontend developer who architects seamless digital experiences through innovative code and intuitive design. With expertise in cutting-edge technologies and a passion for performance optimization, I transform complex business requirements into scalable, user-centric applications that drive meaningful engagement.
-
-Download CV
-
-Let's Collaborate
+Noida, India | Immediate Joiner | akshatbisrawat9@gmail.com | +91-8963008878
+linkedin.com/in/kshtjn | github.com/fiercfly
 
 About me
 
-I'm a frontend developer with 5 years of experience building scalable web applications. I specialize in React, TypeScript, and modern CSS frameworks to deliver high-performance solutions. My expertise includes component architecture, state management, API integration, and responsive design. I focus on writing maintainable code and creating accessible user experiences. Currently working with startups and established companies to transform ideas into production-ready applications.
+I'm a full-stack developer specializing in building scalable web applications with React, Node.js, and cloud-native architectures. My expertise spans video engineering (Konva.js, Remotion, FFmpeg WASM), REST API design, and performance optimization. I've contributed to AI evaluation workflows at Scale AI and currently architect production software at Appy Pie. I focus on writing maintainable code, designing robust backend services, and creating high-performance user experiences.
 
 Skills:
-
+Languages: JavaScript, TypeScript, Java, Python, C++, SQL
+Frontend: React.js, Next.js, Redux, HTML5, CSS3, Tailwind CSS, Bootstrap
+Backend: Node.js, Express.js, Spring, REST APIs, API Design, JWT, OAuth, API Integration
+Databases: PostgreSQL, MongoDB, MySQL, NoSQL, Relational Schema Design
+Cloud/DevOps: Docker, AWS Lambda, GitHub Actions, CI/CD
+Concepts: MVC Architecture, Microservices, System Design, OOP, DBMS, OS, Performance Optimization, AI-Assisted Development
 
 My Resume
 
