@@ -82,12 +82,13 @@ const Header = () => {
                                 LET'S CONNECT
                             </a>
                             <button 
-                                className="lg:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5"
+                                className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
                                 onClick={() => setIsOpen(!isOpen)}
+                                aria-label="Toggle menu"
                             >
-                                <span className={`w-6 h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                                <span className={`w-6 h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : ''}`}></span>
-                                <span className={`w-6 h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                                <span className={`w-5 h-[2px] bg-white/80 rounded-full transition-all duration-300 origin-center ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`}></span>
+                                <span className={`w-5 h-[2px] bg-white/80 rounded-full transition-all duration-300 ${isOpen ? 'opacity-0 scale-x-0' : ''}`}></span>
+                                <span className={`w-5 h-[2px] bg-white/80 rounded-full transition-all duration-300 origin-center ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`}></span>
                             </button>
                         </div>
                     </div>
@@ -100,15 +101,15 @@ const Header = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
-                        className="lg:hidden absolute top-full left-0 w-full px-4 pt-2 z-50"
+                        className="lg:hidden absolute top-full left-0 w-full px-4 pt-3 z-50"
                     >
-                        <div className="glass bg-[#080d09]/95 backdrop-blur-2xl p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] border-white/10 flex flex-col gap-6 text-center shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-primary/20">
+                        <div className="glass bg-[#080d09]/97 backdrop-blur-2xl py-8 px-6 rounded-2xl border border-white/10 flex flex-col gap-4 text-center shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
                             {navItems.map((item) => (
                                 <a
                                     key={item.id}
                                     href={item.href}
                                     onClick={() => { setActiveLink(item.id); setIsOpen(false); }}
-                                    className={`text-2xl font-bold font-serif italic ${activeLink === item.id ? 'text-primary' : 'text-white/40'}`}
+                                    className={`text-lg py-2 font-bold font-serif italic transition-colors duration-300 ${activeLink === item.id ? 'text-primary' : 'text-white/50 hover:text-white/70'}`}
                                 >
                                     {item.label}
                                 </a>

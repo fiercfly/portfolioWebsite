@@ -110,7 +110,7 @@ const Timeline = () => {
   const allTimelineItems = ResumeItems.flatMap(section => section.list);
 
   return (
-    <section className="py-32 relative overflow-hidden" id="timeline">
+    <section className="relative overflow-hidden" id="timeline">
       <div className="container relative z-10">
         {/* Section Header */}
         <div className="mb-20 w-full flex flex-col items-center text-center">
@@ -135,20 +135,20 @@ const Timeline = () => {
               {/* Desktop Center Line */}
               <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-primary/20 -translate-x-1/2"></div>
               {/* Mobile Left Line */}
-              <div className="md:hidden absolute left-4 top-0 bottom-0 w-[1px] bg-primary/20"></div>
+              <div className="md:hidden absolute left-6 top-0 bottom-0 w-[1px] bg-primary/20"></div>
 
               <div className="flex flex-col gap-8 md:gap-16">
                 {allTimelineItems.map((item, i) => (
                   <div key={i} className={`relative flex flex-col md:flex-row items-center justify-between w-full ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
 
                     {/* Node/Dot */}
-                    <div className="absolute left-4 md:left-1/2 top-10 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#080d09] border-2 border-primary z-10 shadow-[0_0_15px_rgba(122,158,126,0.6)]"></div>
+                    <div className="absolute left-6 md:left-1/2 top-8 md:top-1/2 md:-translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#080d09] border-2 border-primary z-10 shadow-[0_0_15px_rgba(122,158,126,0.6)]"></div>
 
                     {/* Empty side for layout balancing (Desktop) */}
                     <div className="hidden md:block md:w-[45%]"></div>
 
                     {/* Card Container */}
-                    <div className="w-full pl-10 md:pl-0 md:w-[45%]">
+                    <div className="w-full pl-14 md:pl-0 md:w-[45%]">
                       <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}

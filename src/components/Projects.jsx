@@ -5,7 +5,7 @@ import { RiGithubFill, RiExternalLinkLine } from "@remixicon/react";
 
 const Projects = () => {
   return (
-    <section className="py-32 relative" id="projects">
+    <section className="relative" id="projects">
       <div className="container relative z-10">
         <div className="flex flex-col items-center text-center mb-16 gap-4">
           <div className="max-w-3xl">

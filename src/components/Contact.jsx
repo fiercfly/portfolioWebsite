@@ -51,7 +51,7 @@ const Contact = () => {
 
                 {/* Unified Glass Container wrapping the entire Contact Content */}
                 {/* Ambient slow-moving mesh gradient backdrop strictly behind the canvas card */}
-                <div className="absolute inset-x-4 md:inset-x-12 top-16 bottom-0 -z-10 overflow-hidden pointer-events-none rounded-[3rem]">
+                <div className="absolute inset-x-2 md:inset-x-12 top-16 bottom-0 -z-10 overflow-hidden pointer-events-none rounded-2xl md:rounded-[3rem]">
                     <motion.div
                         animate={{
                             scale: [1, 1.25, 1],
@@ -72,11 +72,11 @@ const Contact = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="glass bg-white/[0.02] backdrop-blur-3xl max-w-6xl mx-auto mt-16 rounded-2xl md:rounded-[3rem] border border-white/5 overflow-hidden shadow-2xl p-5 sm:p-8 md:p-12 lg:p-20 relative"
+                    className="glass bg-white/[0.02] backdrop-blur-3xl max-w-6xl mx-auto mt-8 md:mt-16 rounded-2xl md:rounded-[3rem] border border-white/5 overflow-hidden shadow-2xl p-4 sm:p-6 md:p-12 lg:p-20 relative"
                 >
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-stretch relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-stretch relative z-10">
                         {/* Contact Info */}
-                        <div className="flex flex-col justify-center items-center text-center p-2 sm:p-6 md:p-8">
+                        <div className="flex flex-col justify-center items-center text-center p-2 sm:p-4 md:p-8">
                             <h3 className="text-sm md:text-base font-bold mb-6 md:mb-10 uppercase tracking-[0.15em] text-primary font-serif italic">Connect With Me</h3>
                             <div className="space-y-6 md:space-y-8 w-full">
                                 {contactItems.map((item) => (

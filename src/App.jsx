@@ -18,7 +18,7 @@ const App = () => {
         <AmbientLife />
         <Header />
         
-        <main className="flex flex-col gap-28 md:gap-36">
+        <main className="flex flex-col gap-12 md:gap-24 lg:gap-36">
           <Hero />
           <Timeline />
           <Projects />
